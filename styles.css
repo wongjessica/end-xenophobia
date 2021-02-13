@@ -53,6 +53,15 @@ a {
     background: white; /* set background of links to make it easy to see which one is chosen */
 }
 
+/* 'deactivate currently visited link ' */
+#navLinkVisited {
+    color: gray;
+}
+
+#navLinkVisited:hover {
+    background: none;
+}
+
 /* in between navbar and footer styling */
 #page-container{
     /* let content 'take up a page', such that footer is always on the bottom */

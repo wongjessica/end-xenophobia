@@ -26,10 +26,7 @@ add(
       </a>
 
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="resources.html">Resources</a></li>
+        ${createNavLinks(window.location.href)}
       </ul>
     </nav>
 `
@@ -47,3 +44,16 @@ add(
     </footer>
 `
 );
+
+/* helper functions for certain elements */
+const navlinks = ["index", "about", "articles", "resources"];
+const navNames = ["Home", "About Us", "Articles", "Resources"];
+
+const createNavLinks = location =>
+  navlinks
+    .map((navlink, index) =>
+      location.includes(navlink)
+        ? `<li><a href="${navlink}" id="navLinkVisited">${navNames[index]}</a></li>`
+        : `<li><a href="${navlink}.html">${navNames[index]}</a></li>`
+    )
+    .join("\n        ");
