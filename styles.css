@@ -3,7 +3,6 @@
   - yellow is primary color
   - red is secondary color
   - white is ternary color
-  - rem > px
 */
 
 body {
@@ -17,11 +16,11 @@ a {
     color: red;
 }
 
-/* navbar code */
+/* navbar styling */
 .navbar{
-    width: 100%; /*full width of screen*/
-    height: 5rem; /* keep uniform vertical height for navbar */
     background-color: yellow;
+    height: 5rem; /* keep uniform vertical height for navbar */
+    width: 100%; /*full width of screen*/
 }
 
 .navbar > a > img {
@@ -29,14 +28,13 @@ a {
     vertical-align: top;
     width: 13rem;
     height: 5rem;
-    margin-right: 20rem;
 }
 
 .navbar > ul {
     /* navbar elements should be vertically centered in navbar and approximately as far from right as logo text is from left*/
     float: right;
-    margin: 0.5rem 0 2.5rem 0;
-    padding: 1rem;
+    margin: 1.75rem 0 20px 0;
+    padding-right: 10px;
     text-align: center;
 }
 
@@ -56,13 +54,12 @@ a {
 }
 
 /* custom defined elements */
-#titleofpage{
+.title{
     color:#58ACFA;
     font-family:Trebuchet MS;
     font-size:75px;
-    margin-left:300px;
-    margin-top:80px;
-    position:fixed;
+    padding-bottom: 30px;
+    text-align: center;
     text-shadow:2px 3px 2px #FE2E2E;
     z-index:999;
 }
@@ -71,10 +68,9 @@ a {
     background:#FAFAFA;
     border: 10px solid #fff;
     box-shadow:0px 9px 10px #cdcdcd;
+    font-size: 35px;
     height: 520px;
-    margin-left:20px;
-    margin-top:100px;
-    position: fixed;
-    width:  1380px;
+    margin: 0 auto;
+    width: 85%;
     z-index:1;
 }
