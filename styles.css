@@ -1,76 +1,80 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;   
-    overflow: hidden;
-    background-color: #ece91f;
-}
-
-li {
-    float: left;    
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
-}
+/*
+  Styling notes:
+  - yellow is primary color
+  - red is secondary color
+  - white is ternary color
+  - rem > px
+*/
 
 body {
-    color: #6E6E6E;
-    background-color: #f7f7f7; 
-    font-family: times new roman;
-    line-height:13px;
-    font-size:14px;
-    padding: 0px;
-    margin: 0px;
-    background-attachment: fixed;
-    background-repeat: repeat;
+    /* avoiding any weird margins on the sides*/
+    margin: 0;
+    padding: 0;
 }
 
+/* general elements */
+a {
+    color: red;
+}
+
+/* navbar code */
+.navbar{
+    width: 100%; /*full width of screen*/
+    height: 5rem; /* keep uniform vertical height for navbar */
+    background-color: yellow;
+}
+
+.navbar > a > img {
+    display: inline-block;
+    vertical-align: top;
+    width: 13rem;
+    height: 5rem;
+    margin-right: 20rem;
+}
+
+.navbar > ul {
+    /* navbar elements should be vertically centered in navbar and approximately as far from right as logo text is from left*/
+    float: right;
+    margin: 0.5rem 0 2.5rem 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.navbar > ul > li {
+    /* collapse list to have items act as inline elements */
+    display: inline;
+    list-style-type: none;
+}
+
+.navbar > ul > li > a {
+    font-size: 1.5rem; /* font size should be about aligned with text in logo */
+    padding: 1.15rem; /* pad items here so li inherits the size for background changes */
+}
+
+.navbar > ul > li > a:hover {
+    background: white; /* set background of links to make it easy to see which one is chosen */
+}
+
+/* custom defined elements */
 #titleofpage{
-    position:fixed;
     color:#58ACFA;
-    text-shadow:2px 3px 2px #FE2E2E;
     font-family:Trebuchet MS;
     font-size:75px;
-    margin-top:80px;
     margin-left:300px;
+    margin-top:80px;
+    position:fixed;
+    text-shadow:2px 3px 2px #FE2E2E;
     z-index:999;
 }
 
-#border{ 
-    z-index:1;
-    position: fixed;
-    margin-left:20px;
-    margin-top:100px;
-    width:  1380px;
-    height: 520px;
-    box-shadow:0px 9px 10px #cdcdcd;
+#border{
     background:#FAFAFA;
     border: 10px solid #fff;
+    box-shadow:0px 9px 10px #cdcdcd;
+    height: 520px;
+    margin-left:20px;
+    margin-top:100px;
+    position: fixed;
+    width:  1380px;
+    z-index:1;
 }
-
-a:link, a:active, a:visited {
-    text-decoration: none;
-    -webkit-transition: all 0.3s linear; 
-    -moz-transition: all 0.3s linear; 
-    transition: all 0.3s linear;
-    color:#6E6E6E;
-}
-
-a:hover {
-    text-shadow:0 0 10px #000;
-    text-decoration:none;
-    color: #fff;
-    -webkit-transition: all 0.3slinear; 
-    -moz-transsition: all 0.3s linear; 
-    transition: all 0.3s linear;
-}
-
