@@ -6,18 +6,8 @@
     <title>End Xenophobia Against Asians</title>
   </head>
   <body>
-    <nav class="navbar">
-      <a href="index.html">
-        <img alt="logo" src="https://brigidine.org.au/wp-content/uploads/2017/06/Xenophobia-2.jpg"/>
-      </a>
 
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="resources.html">Resources</a></li>
-      </ul>
-    </nav>
+    <div id="navbar"></div>
 
     <div id="page-container">
       <div class="title">
@@ -29,12 +19,11 @@
       </div>
     </div>
 
-    <footer class="footer">
-      <p>
-        &copy; End Xenophobia
-        <br>
-        <a href="mailto:hello@end-xenophobia.com">hello@end-xenophobia.com</a>
-      </p>
-    </footer>
+    <footer id="footer"></footer>
+
+    <script src="js/includes.js"></script>
+    <script>
+     includes(['navbar', 'footer']);
+    </script>
   </body>
 </html>
