@@ -53,6 +53,13 @@ a {
     background: white; /* set background of links to make it easy to see which one is chosen */
 }
 
+/* in between navbar and footer styling */
+#page-container{
+    /* let content 'take up a page', such that footer is always on the bottom */
+    position: relative;
+    min-height: 85vh;
+}
+
 /* custom defined elements */
 .title{
     color:#58ACFA;
@@ -73,4 +80,11 @@ a {
     margin: 0 auto;
     width: 85%;
     z-index:1;
+}
+
+/* footer styling */
+.footer{
+    background-color: gray;
+    height: 5rem; /* keep uniform vertical height for navbar */
+    width: 100%; /*full width of screen*/
 }
