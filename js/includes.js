@@ -25,7 +25,8 @@ add(
         <img alt="logo" src="https://brigidine.org.au/wp-content/uploads/2017/06/Xenophobia-2.jpg"/>
       </a>
 
-      <ul>
+      <input type="checkbox" id="menu" class="menu-checkbox"/>
+      <ul class="menu">
         ${createNavLinks(window.location.href)}
       </ul>
     </nav>

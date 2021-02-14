@@ -30,7 +30,7 @@ a {
     height: 5rem;
 }
 
-.navbar > ul {
+.menu {
     /* navbar elements should be vertically centered in navbar and approximately as far from right as logo text is from left*/
     float: right;
     margin: 1.75rem 0 20px 0;
@@ -38,18 +38,18 @@ a {
     text-align: center;
 }
 
-.navbar > ul > li {
+.menu > li {
     /* collapse list to have items act as inline elements */
     display: inline;
     list-style-type: none;
 }
 
-.navbar > ul > li > a {
+.menu > li > a {
     font-size: 1.5rem; /* font size should be about aligned with text in logo */
     padding: 1.15rem; /* pad items here so li inherits the size for background changes */
 }
 
-.navbar > ul > li > a:hover {
+.menu > li > a:hover {
     background: white; /* set background of links to make it easy to see which one is chosen */
 }
 
@@ -60,6 +60,36 @@ a {
 
 #navLinkVisited:hover {
     background: none;
+}
+
+.menu-checkbox {
+    display: none;
+}
+
+/* small screen, navbar likely can't fit horizontally */
+@media only screen and (max-width: 800px) {
+    body {
+        background-color: lightblue;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu-checkbox {
+        display: inline;
+        float:right;
+    }
+
+    .menu-checkbox:checked + .menu {
+        display: block;
+    }
+
+    .menu > li {
+        display: block;
+        list-style-type: circle;
+        text-align: center;
+    }
 }
 
 /* in between navbar and footer styling */
