@@ -106,6 +106,27 @@ a {
     min-height: calc(100vh - 10rem); /* total viewport height - (navbar height + footer height) */
 }
 
+.page-contents {
+    margin: auto;
+    width: 90%;
+    font-size: 1em;
+}
+
+.half-vertical-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.half-vertical {
+    padding: 1%;
+    width: 48%;
+}
+
+.half-vertical:nth-child(2) {
+    box-sizing: border-box;
+    border-left: 1px solid black;
+}
+
 /* custom defined elements */
 .title{
     color: #124559 ;
