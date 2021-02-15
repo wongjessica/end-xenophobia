@@ -13,14 +13,15 @@ body {
 
 /* general elements */
 a {
-    color: red;
+    color: #124559;
 }
 
 /* navbar styling */
 .navbar{
-    background-color: yellow;
+    background-color: #eff6e0;
     height: 5rem; /* keep uniform vertical height for navbar */
     width: 100%; /*full width of screen*/
+    border-bottom: .1em solid #aec3b0;
 }
 
 .navbar > a > img {
@@ -69,16 +70,21 @@ a {
 /* small screen, navbar likely can't fit horizontally */
 @media only screen and (max-width: 800px) {
     body {
-        background-color: lightblue;
     }
 
     .menu {
         display: none;
+        padding: 0;
+        right: 0;
+        background-color: #eff6e0;
+        margin: 0;
+        z-index: 1;
+        width: 100vw;
     }
 
     .menu-checkbox {
         display: inline;
-        float:right;
+        float: right;
     }
 
     .menu-checkbox:checked + .menu {
@@ -89,6 +95,7 @@ a {
         display: block;
         list-style-type: circle;
         text-align: center;
+        border-bottom: .1em solid #aec3b0;
     }
 }
 
@@ -101,13 +108,12 @@ a {
 
 /* custom defined elements */
 .title{
-    color:#58ACFA;
-    font-family:Trebuchet MS;
-    font-size:5rem;
-    padding-bottom: 30px;
+    color: #124559 ;
+    font-family: Trebuchet MS;
+    font-size: 4rem;
+    padding: 2% 0 0 0;
     text-align: center;
-    text-shadow:2px 3px 2px #FE2E2E;
-    z-index:999;
+    text-shadow:2px 3px 2px #598392;
 }
 
 #border{
@@ -116,8 +122,8 @@ a {
     box-shadow:0px 9px 10px #cdcdcd;
     font-size: 2rem;
     height: 520px;
-    margin: 0 auto;
-    width: 85%;
+    margin: 3% auto;
+    width: 90vw;
     z-index:1;
 }
 

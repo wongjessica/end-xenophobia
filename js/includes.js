@@ -30,7 +30,7 @@ add(
         ${createNavLinks(window.location.href)}
       </ul>
     </nav>
-`
+  `
 );
 
 add(
