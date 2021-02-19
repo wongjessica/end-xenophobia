@@ -13,14 +13,15 @@ body {
 
 /* general elements */
 a {
-    color: red;
+    color: #124559;
 }
 
 /* navbar styling */
 .navbar{
-    background-color: yellow;
+    background-color: #eff6e0;
     height: 5rem; /* keep uniform vertical height for navbar */
     width: 100%; /*full width of screen*/
+    border-bottom: .1em solid #aec3b0;
 }
 
 .navbar > a > img {
@@ -30,7 +31,7 @@ a {
     height: 5rem;
 }
 
-.navbar > ul {
+.menu {
     /* navbar elements should be vertically centered in navbar and approximately as far from right as logo text is from left*/
     float: right;
     margin: 1.75rem 0 20px 0;
@@ -38,18 +39,18 @@ a {
     text-align: center;
 }
 
-.navbar > ul > li {
+.menu > li {
     /* collapse list to have items act as inline elements */
     display: inline;
     list-style-type: none;
 }
 
-.navbar > ul > li > a {
+.menu > li > a {
     font-size: 1.5rem; /* font size should be about aligned with text in logo */
     padding: 1.15rem; /* pad items here so li inherits the size for background changes */
 }
 
-.navbar > ul > li > a:hover {
+.menu > li > a:hover {
     background: white; /* set background of links to make it easy to see which one is chosen */
 }
 
@@ -62,22 +63,78 @@ a {
     background: none;
 }
 
+.menu-checkbox {
+    display: none;
+}
+
+/* small screen, navbar likely can't fit horizontally */
+@media only screen and (max-width: 800px) {
+    body {
+    }
+
+    .menu {
+        display: none;
+        padding: 0;
+        right: 0;
+        background-color: #eff6e0;
+        margin: 0;
+        z-index: 1;
+        width: 100vw;
+    }
+
+    .menu-checkbox {
+        display: inline;
+        float: right;
+    }
+
+    .menu-checkbox:checked + .menu {
+        display: block;
+    }
+
+    .menu > li {
+        display: block;
+        list-style-type: circle;
+        text-align: center;
+        border-bottom: .1em solid #aec3b0;
+    }
+}
+
 /* in between navbar and footer styling */
 #page-container{
     /* let content 'take up a page', such that footer is always on the bottom */
     position: relative;
-    min-height: 91vh; /* TODO: trial and error, this could probably be improved */
+    min-height: calc(100vh - 10rem); /* total viewport height - (navbar height + footer height) */
+}
+
+.page-contents {
+    margin: auto;
+    width: 90%;
+    font-size: 1em;
+}
+
+.half-vertical-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.half-vertical {
+    padding: 1%;
+    width: 48%;
+}
+
+.half-vertical:nth-child(2) {
+    box-sizing: border-box;
+    border-left: 1px solid black;
 }
 
 /* custom defined elements */
 .title{
-    color:#58ACFA;
-    font-family:Trebuchet MS;
-    font-size:5rem;
-    padding-bottom: 30px;
+    color: #124559 ;
+    font-family: Trebuchet MS;
+    font-size: 4rem;
+    padding: 2% 0 0 0;
     text-align: center;
-    text-shadow:2px 3px 2px #FE2E2E;
-    z-index:999;
+    text-shadow:2px 3px 2px #598392;
 }
 
 #border{
@@ -86,8 +143,8 @@ a {
     box-shadow:0px 9px 10px #cdcdcd;
     font-size: 2rem;
     height: 520px;
-    margin: 0 auto;
-    width: 85%;
+    margin: 3% auto;
+    width: 90vw;
     z-index:1;
 }
 
