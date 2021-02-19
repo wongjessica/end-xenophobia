@@ -144,6 +144,7 @@ a {
     font-size: 2rem;
     height: 520px;
     margin: 3% auto;
+    overflow: auto;
     width: 90vw;
     z-index:1;
 }
