@@ -31,13 +31,19 @@ const getInformation = async fetch => {
   const rawInformations = await Promise.all(linkInformations);
 
   const formattedInformation = rawInformations.reduce(
-    (stored, [title, description, image]) => {
+    (stored, [title, description, image], index) => {
       // TODO: format here
-      const information = title + description + image;
+      const information = `
+        <div>
+          <p><img src="${image}" style="height: 7rem;width: 7rem;float: left;"/><p/>
+          <p><a href="${links[index]}">${title}</a><p/>
+          <p>${description}<p/>
+        </div>
+`;
       return stored + information;
     },
     ""
   );
 
-  return `<div>${formattedInformation}</div>`;
+  return formattedInformation;
 };
