@@ -36,6 +36,14 @@
                return item.match(regex)
              })))
          .then(relevantOgs => relevantOgs.map(relevantOg => relevantOg[0]))
+         .then((stringifiedMetas) =>{
+           parser = new DOMParser()
+           return stringifiedMetas
+             .map(stringifiedMeta => parser
+               .parseFromString(stringifiedMeta, "text/xml")
+               .childNodes[0]
+               .getAttribute("content"))
+         })
     </script>
 
     <script src="js/includes.js"></script>
