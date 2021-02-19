@@ -29,6 +29,21 @@
        .forEach(link => useAPI(link)
          .then(res=> res.text())
          .then(data => data.split("\n"))
+         .then(lines => {
+           const titles = lines.filter(item => {
+             const regexTitle = new RegExp("og:title", 'gi');
+             return item.match(regexTitle)
+           })
+           const descriptions = lines.filter(item => {
+             const regexDescription = new RegExp("og:description", 'gi');
+             return item.match(regexDescription)
+           })
+           const images = lines.filter(item => {
+             const regexImage = new RegExp("og:image", 'gi');
+             return item.match(regexImage)
+           })
+           return [titles[0], descriptions[0], images[0]]
+         })
     </script>
 
     <script src="js/includes.js"></script>
