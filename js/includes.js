@@ -5,14 +5,14 @@ const context = {};
 const add = (identifier, fn) => (context[identifier] = fn);
 
 // sets html with the proper injection
-const set_includes = elem => {
+const set_includes = async elem => {
   const e = document.getElementById(elem);
-  e.innerHTML = context[elem]();
+  e.innerHTML = await context[elem]();
 };
 
 // map set_includes onto the page's chosen elements
-const includes = elems => {
-  elems.forEach(elem => set_includes(elem));
+const includes = async elems => {
+  elems.forEach(async elem => await set_includes(elem));
 };
 
 /* actual stringified inner html that will be injected in */

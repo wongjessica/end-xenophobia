@@ -15,15 +15,18 @@
       </div>
 
       <div id="border">
-        Test
+        <div id="articles"></div>
       </div>
     </div>
 
     <footer id="footer"></footer>
 
+    <script src="js/useAPI.js"></script>
+    <script src="js/articles.js"></script>
     <script src="js/includes.js"></script>
     <script>
-     includes(['navbar', 'footer']);
+     add("articles", () => getInformation(useAPI))
+     includes(['navbar', 'footer', 'articles']);
     </script>
   </body>
 </html>
