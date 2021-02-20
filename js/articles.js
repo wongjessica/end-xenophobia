@@ -36,7 +36,7 @@ const getInformation = async fetch => {
       // TODO: format here
       const information = `
         <div>
-          <p><img src="${image}" style="height: 7rem;width: 7rem;float: left;"/><p/>
+          <p><img src="${image}" style="height: 7rem;width: 7rem;float: left;padding-right: 2rem;"/><p/>
           <p><a href="${links[index]}">${title}</a><p/>
           <p>${description}<p/>
         </div>
