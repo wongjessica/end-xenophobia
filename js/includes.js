@@ -54,7 +54,7 @@ const createNavLinks = location =>
   navlinks
     .map((navlink, index) =>
       location.includes(navlink)
-        ? `<li><a href="${navlink}" id="navLinkVisited">${navNames[index]}</a></li>`
+        ? `<li><a href="${navlink}.html" id="navLinkVisited">${navNames[index]}</a></li>`
         : `<li><a href="${navlink}.html">${navNames[index]}</a></li>`
     )
     .join("\n        ");
