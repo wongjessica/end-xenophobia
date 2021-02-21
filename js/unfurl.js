@@ -26,9 +26,10 @@ const getInformation = async (fetch, links) => {
 
   const formattedInformation = rawInformations.reduce(
     (stored, [title, description, image], index) => {
+      const imageLink = image.substring(image.indexOf("http"));
       const information = `
         <div>
-          <p><img src="${image}" style="height: 7rem;width: 7rem;float: left;padding-right: 2rem;"/><p/>
+          <p><img src="${imageLink}" style="height: 7rem;width: 7rem;float: left;padding-right: 2rem;"/><p/>
           <p><a href="${links[index]}">${title}</a><p/>
           <p>${description}<p/>
         </div>
