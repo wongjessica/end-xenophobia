@@ -1,30 +1,23 @@
-const getInformation = async fetch => {
-  const links = [
-    "https://www.unicefusa.org/stories/5-ways-fight-racism-and-xenophobia/34567",
-    "https://greatergood.berkeley.edu/article/item/antiracist_resources_from_greater_good",
-    "https://www.washington.edu/raceequity/resources/anti-racism-resources/",
-    "https://www.insidehighered.com/views/2020/05/14/inclusive-teaching-needed-help-combat-xenophobia-racism-and-discrimination-brought"
-  ];
-
+const getInformation = async (fetch, links) => {
   const linkInformations = links.map(link =>
     fetch(link)
       .then(res => res.text())
-      .then(data => data.split("\n"))
+      .then(data => data.split("\n")) // extract article html as text
       .then(lines =>
         ["title", "description", "image"].map(attribute =>
           lines.filter(item => {
-            const regex = new RegExp(`og:${attribute}`, "gi");
+            const regex = new RegExp(`og:${attribute}`, "gi"); // filter out meta tags
             return item.match(regex);
           })
         )
       )
       .then(relevantOgs => relevantOgs.map(relevantOg => relevantOg[0]))
       .then(stringifiedMetas => {
-        parser = new DOMParser();
+        parser = new DOMParser(); // create dom parser to interpret string
         return stringifiedMetas.map(stringifiedMeta =>
           parser
-            .parseFromString(stringifiedMeta, "text/xml")
-            .childNodes[0].getAttribute("content")
+            .parseFromString(stringifiedMeta, "text/xml") // interpret meta tags as single xml node
+            .childNodes[0].getAttribute("content") // extract actual content
         );
       })
   );
@@ -33,10 +26,10 @@ const getInformation = async fetch => {
 
   const formattedInformation = rawInformations.reduce(
     (stored, [title, description, image], index) => {
-      // TODO: format here
+      const imageLink = image.substring(image.indexOf("http")); // ensure image link is in proper format
       const information = `
         <div>
-          <p><img src="${image}" style="height: 7rem;width: 7rem;float: left;padding-right: 2rem;"/><p/>
+          <p><img src="${imageLink}" style="height: 7rem;width: 7rem;float: left;padding-right: 2rem;"/><p/>
           <p><a href="${links[index]}">${title}</a><p/>
           <p>${description}<p/>
         </div>

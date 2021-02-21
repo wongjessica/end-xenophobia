@@ -149,6 +149,13 @@ a {
     z-index:1;
 }
 
+/* resize article and resources border on mobile */
+@media only screen and (max-width: 800px) {
+    #border{
+        height: 600px;
+    }
+}
+
 /* footer styling */
 .footer{
     background-color: gray; /* a lighter dark color makes sense for footer */

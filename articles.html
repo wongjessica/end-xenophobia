@@ -22,11 +22,17 @@
     <footer id="footer"></footer>
 
     <script src="js/useAPI.js"></script>
-    <script src="js/articles.js"></script>
+    <script src="js/unfurl.js"></script>
     <script src="js/includes.js"></script>
     <script>
-     add("articles", () => getInformation(useAPI))
-     includes(['navbar', 'footer', 'articles']);
+      const links = [
+        "https://www.novinite.com/articles/208109/EC%3A+Bulgaria+Breaches+EU+Regulations+on+Racism+and+Xenophobia",
+        "https://www.wglt.org/post/isu-professor-xenophobia-against-asian-americans-has-grown-stronger-0",
+        "https://www.nycaribnews.com/articles/clarke-introduces-legislation-to-overhaul-immigration-system/",
+        "https://now.tufts.edu/articles/long-history-xenophobia-america"
+      ]
+      add("articles", () => getInformation(useAPI, links))
+      includes(['navbar', 'footer', 'articles']);
     </script>
   </body>
 </html>
