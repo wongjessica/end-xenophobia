@@ -1,11 +1,4 @@
-const getInformation = async fetch => {
-  const links = [
-    "https://www.unicefusa.org/stories/5-ways-fight-racism-and-xenophobia/34567",
-    "https://greatergood.berkeley.edu/article/item/antiracist_resources_from_greater_good",
-    "https://www.washington.edu/raceequity/resources/anti-racism-resources/",
-    "https://www.insidehighered.com/views/2020/05/14/inclusive-teaching-needed-help-combat-xenophobia-racism-and-discrimination-brought"
-  ];
-
+const getInformation = async (fetch, links) => {
   const linkInformations = links.map(link =>
     fetch(link)
       .then(res => res.text())
