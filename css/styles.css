@@ -136,7 +136,7 @@ a {
     text-align: center;
     text-shadow:2px 3px 2px #598392;
 }
-
+/* custom border to help display info */
 #border{
     background:#FAFAFA;
     border: 10px solid #fff;
@@ -148,7 +148,7 @@ a {
     width: 90vw;
     z-index:1;
 }
-
+/* custom border to help display info on homepage */
 #border2{
     background:#a2e3f7;
     border: 10px solid rgb(0, 0, 0);
@@ -162,6 +162,7 @@ a {
     z-index:1;
 }
 
+/* custom border to display interview highlights */
 #border3{
     background:#a2e3f7;
     border: 10px solid rgb(0, 0, 0);
