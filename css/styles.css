@@ -151,7 +151,7 @@ a {
 
 #border2{
     background:#a2e3f7;
-    border: 10px solid #fff;
+    border: 10px solid rgb(0, 0, 0);
     padding: 15px;
     box-shadow:0px 9px 10px #cdcdcd;
     font-size: 2rem;
@@ -163,16 +163,17 @@ a {
 }
 
 #border3{
-    background:#89a9b3;
-    border: 10px solid #fff;
+    background:#a2e3f7;
+    border: 10px solid rgb(0, 0, 0);
     padding: 15px;
     box-shadow:0px 9px 10px #cdcdcd;
-    font-size: 2rem;
-    height: 520px;
+    font-size: 25px;
+    height: 600px;
     margin: 3% auto;
     overflow: auto;
     width: 90vw;
     z-index:1;
+    font-family: arial;
 }
 
 /* resize article and resources border on mobile */
